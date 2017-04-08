@@ -4,7 +4,7 @@ defmodule Nika.EpisodesController do
   alias Nika.Episode
 
   def index(conn, _params) do
-    name = Repo.all(Episodes)
+    name = Repo.all(Episode)
     render(conn, "index.html", name: name)
   end
 
@@ -27,19 +27,19 @@ defmodule Nika.EpisodesController do
   end
 
   def show(conn, %{"id" => id}) do
-    episodes = Repo.get!(Episodes, id)
+    episodes = Repo.get!(Episode, id)
     render(conn, "show.html", episodes: episodes)
   end
 
   def edit(conn, %{"id" => id}) do
-    episodes = Repo.get!(Episodes, id)
+    episodes = Repo.get!(Episode, id)
     changeset = Episode.changeset(episodes)
     render(conn, "edit.html", episodes: episodes, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "episodes" => episodes_params}) do
-    episodes = Repo.get!(Episodes, id)
-    changeset = Episode.changeset(episodes, episodes_params)
+    episodes = Repo.get!(Episode, id)
+    changeset = Episode.changeset(Episode, episodes_params)
 
     case Repo.update(changeset) do
       {:ok, episodes} ->
@@ -52,7 +52,7 @@ defmodule Nika.EpisodesController do
   end
 
   def delete(conn, %{"id" => id}) do
-    episodes = Repo.get!(Episodes, id)
+    episodes = Repo.get!(Episode, id)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).

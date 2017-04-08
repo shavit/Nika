@@ -1,0 +1,6 @@
+<h2>New episodes</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: episodes_path(@conn, :create) %>
+
+<%= link "Back", to: episodes_path(@conn, :index) %>

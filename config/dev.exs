@@ -36,8 +36,9 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :nika, Nika.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  uri: System.get_env("DATABASE_URL"),
+  # username: "postgres",
+  # password: "postgres",
   database: "nika_dev",
-  hostname: "localhost",
+  # hostname: "localhost",
   pool_size: 10

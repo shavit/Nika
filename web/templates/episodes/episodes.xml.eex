@@ -26,17 +26,13 @@
         <description>
           <![CDATA[<img src="<%= formatted_uri episode.picture %>" alt="<%= episode.name %>" />]]>
         </description>
-        <image>
-          <url><%= formatted_uri episode.picture %></url>
-          <title><%= episode.name %></title>
-          <link>https://shavittzuriel.com</link>
-        </image>
         <guid><%= formatted_uri(episode.video_url) %></guid>
         <pubDate><%= formatted_date(episode.created) %></pubDate>
         <itunes:author><%= episode.author %></itunes:author>
         <itunes:explicit><%= if episode.explicit do "Yes" else "No" end %></itunes:explicit>
         <itunes:subtitle>Art, entertainment, castings, backstage videos, Periscope replays from the studio.</itunes:subtitle>
         <itunes:summary><%= episode.description %></itunes:summary>
+        <itunes:image href="<%= formatted_uri episode.picture %>"></itunes:image>
         <itunes:duration><%= episode.duration %></itunes:duration>
         <enclosure url="<%= formatted_uri(episode.video_url) %>" type="video/mp4" length="<%= episode.duration %>"></enclosure>
         <itunes:keywords>Backstage,Photoshoot,Fashion,Behind The Scenes,Studio,ShavitTzuriel,Lighting,Periscope,Vlog,Nu,Art</itunes:keywords>

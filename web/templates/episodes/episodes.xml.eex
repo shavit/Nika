@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Backstage Casting</title>
     <link>https://shavittzuriel.com/</link>
+    <atom:link href="https://shavittzuriel.com/rss/podcast.xml" rel="self" type="application/rss+xml"/>
     <description>Get a front row seat to backstage and behind the scenes videos, Periscope replays from the studio.</description>
     <language>en-us</language>
     <itunes:author>Shavit Tzuriel</itunes:author>
@@ -13,7 +16,7 @@
       <itunes:email>podcast@shavittzuriel.info</itunes:email>
     </itunes:owner>
     <itunes:explicit>Yes</itunes:explicit>
-    <itunes:image href="https://firebasestorage.googleapis.com/v0/b/shavit-c8be9.appspot.com/o/podcast%2Fartwork.png?alt=media&amp;token=d841de9a-0e18-4a83-b846-61f13278444c#/"></itunes:image>
+    <itunes:image href="https://shavittzuriel.com/rss/artwork.png"></itunes:image>
     <itunes:category text="TV &amp; Film"></itunes:category>
 
     <%= for episode <- @episodes do %>
@@ -29,8 +32,8 @@
         <itunes:explicit><%= if episode.explicit do "Yes" else "No" end %></itunes:explicit>
         <itunes:subtitle>Art, entertainment, castings, backstage videos, Periscope replays from the studio.</itunes:subtitle>
         <itunes:summary><%= episode.description %></itunes:summary>
-        <itunes:duration><%= formatted_duration(episode.duration) %></itunes:duration>
-        <enclosure url="<%= formatted_uri(episode.video_url) %>" type="video/mp4" length="<%= formatted_duration(episode.duration) %>"></enclosure>
+        <itunes:duration><%= episode.duration %></itunes:duration>
+        <enclosure url="<%= formatted_uri(episode.video_url) %>" type="video/mp4" length="<%= episode.duration %>"></enclosure>
         <itunes:keywords>Backstage,Photoshoot,Fashion,Behind The Scenes,Studio,ShavitTzuriel,Lighting,Periscope,Vlog,Nu,Art</itunes:keywords>
       </item>
     <% end %>

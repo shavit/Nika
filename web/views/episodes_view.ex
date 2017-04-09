@@ -2,7 +2,7 @@ defmodule Nika.EpisodesView do
   use Nika.Web, :view
 
   def formatted_duration(duration) do
-    "#{(duration |> div 60)}:#{(duration |> rem 60)}"
+    "#{zero_leading(duration |> div 60)}:#{zero_leading(duration |> rem 60)}"
   end
 
   def formatted_uri(uri) do

@@ -1,6 +1,6 @@
 <h2>Edit episodes</h2>
 
 <%= render "form.html", changeset: @changeset,
-                        action: episodes_path(@conn, :update, @episodes) %>
+                        action: episodes_path(@conn, :update, @episode) %>
 
 <%= link "Back", to: episodes_path(@conn, :index) %>

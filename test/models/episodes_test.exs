@@ -3,7 +3,7 @@ defmodule Nika.EpisodesTest do
 
   alias Nika.Episodes
 
-  @valid_attrs %{author: "some content", created: %{hour: 14, min: 0, sec: 0}, description: "some content", duration: 42, explicit: true, picture: "some content"}
+  @valid_attrs %{name: "some name", author: "some content", created: %{hour: 14, min: 0, sec: 0}, description: "some content", duration: 42, explicit: true, picture: "some content", video_url: "some url"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

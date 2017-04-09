@@ -8,6 +8,7 @@ defmodule Nika.Repo.Migrations.CreateEpisodes do
       add :explicit, :boolean, default: false, null: false
       add :description, :string
       add :picture, :string
+      add :video_url, :string
       add :duration, :integer
       add :created, :time
 

@@ -1,38 +1,38 @@
-<h2>Show episodes</h2>
+<h2><%= @episode.name %></h2>
 
 <ul>
 
   <li>
     <strong>Author:</strong>
-    <%= @episodes.author %>
+    <%= @episode.author %>
   </li>
 
   <li>
     <strong>Explicit:</strong>
-    <%= @episodes.explicit %>
+    <%= @episode.explicit %>
   </li>
 
   <li>
     <strong>Description:</strong>
-    <%= @episodes.description %>
+    <%= @episode.description %>
   </li>
 
   <li>
     <strong>Picture:</strong>
-    <%= @episodes.picture %>
+    <%= @episode.picture %>
   </li>
 
   <li>
     <strong>Duration:</strong>
-    <%= @episodes.duration %>
+    <%= @episode.duration %>
   </li>
 
   <li>
     <strong>Created:</strong>
-    <%= @episodes.created %>
+    <%= @episode.created %>
   </li>
 
 </ul>
 
-<%= link "Edit", to: episodes_path(@conn, :edit, @episodes) %>
+<%= link "Edit", to: episodes_path(@conn, :edit, @episode) %>
 <%= link "Back", to: episodes_path(@conn, :index) %>

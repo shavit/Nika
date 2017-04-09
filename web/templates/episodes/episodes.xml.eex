@@ -13,7 +13,7 @@
       <itunes:email>podcast@shavittzuriel.info</itunes:email>
     </itunes:owner>
     <itunes:explicit>Yes</itunes:explicit>
-    <itunes:image href="https://shavittzuriel.com/podcasts/postcast_cover_art_181115.png"></itunes:image>
+    <itunes:image href="https://firebasestorage.googleapis.com/v0/b/shavit-c8be9.appspot.com/o/podcast%2Fartwork.png?alt=media&token=03647dac-f5d0-4e67-976b-00a6bc93057e"></itunes:image>
     <itunes:category text="TV &amp; Film"></itunes:category>
 
     <%= for episode <- @episodes do %>

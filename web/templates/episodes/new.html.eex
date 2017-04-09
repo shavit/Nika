@@ -1,4 +1,4 @@
-<h2>New episodes</h2>
+<h2>New episode</h2>
 
 <%= render "form.html", changeset: @changeset,
                         action: episodes_path(@conn, :create) %>

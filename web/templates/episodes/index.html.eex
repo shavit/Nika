@@ -1,8 +1,9 @@
-<h2>Listing name</h2>
+<h2>Listing Episodes</h2>
 
-<table class="table">
+<table class="table mui-table">
   <thead>
     <tr>
+      <th>Name</th>
       <th>Author</th>
       <th>Explicit</th>
       <th>Description</th>
@@ -16,10 +17,16 @@
   <tbody>
 <%= for episodes <- @name do %>
     <tr>
+      <td><%= episodes.name %></td>
       <td><%= episodes.author %></td>
       <td><%= episodes.explicit %></td>
       <td><%= episodes.description %></td>
-      <td><%= episodes.picture %></td>
+      <td>
+        <%= link to: episodes_path(@conn, :show, episodes), class: "btn btn-default btn-xs" do %>
+          <img src="<%= episodes.picture %>" alt="<%= episodes.name %>"
+            width="240" />
+        <% end %>
+      </td>
       <td><%= episodes.duration %></td>
       <td><%= episodes.created %></td>
 

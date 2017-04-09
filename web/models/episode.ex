@@ -8,7 +8,7 @@ defmodule Nika.Episode do
     field :description, :string
     field :picture, :string
     field :duration, :integer
-    field :created, Ecto.Time
+    field :created, Ecto.Time, default: Ecto.DateTime.utc
 
     timestamps()
   end
@@ -18,7 +18,7 @@ defmodule Nika.Episode do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:author, :explicit, :description, :picture, :duration, :created])
-    |> validate_required([:author, :explicit, :description, :picture, :duration, :created])
+    |> cast(params, [:name, :author, :explicit, :description, :picture, :duration, :created])
+    |> validate_required([:name, :author, :explicit, :description, :picture, :duration, :created])
   end
 end

@@ -13,13 +13,13 @@ defmodule Nika.EpisodesController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"episodes" => episodes_params}) do
-    changeset = Episode.changeset(%Episode{}, episodes_params)
+  def create(conn, %{"episode" => episode_params}) do
+    changeset = Episode.changeset(%Episode{}, episode_params)
 
     case Repo.insert(changeset) do
       {:ok, _episodes} ->
         conn
-        |> put_flash(:info, "Episodes created successfully.")
+        |> put_flash(:info, "Episode created successfully.")
         |> redirect(to: episodes_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
@@ -27,39 +27,39 @@ defmodule Nika.EpisodesController do
   end
 
   def show(conn, %{"id" => id}) do
-    episodes = Repo.get!(Episode, id)
-    render(conn, "show.html", episodes: episodes)
+    episode = Repo.get!(Episode, id)
+    render(conn, "show.html", episode: episode)
   end
 
   def edit(conn, %{"id" => id}) do
-    episodes = Repo.get!(Episode, id)
-    changeset = Episode.changeset(episodes)
-    render(conn, "edit.html", episodes: episodes, changeset: changeset)
+    episode = Repo.get!(Episode, id)
+    changeset = Episode.changeset(episode)
+    render(conn, "edit.html", episode: episode, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "episodes" => episodes_params}) do
-    episodes = Repo.get!(Episode, id)
-    changeset = Episode.changeset(Episode, episodes_params)
+  def update(conn, %{"id" => id, "episode" => episode_params}) do
+    episode = Repo.get!(Episode, id)
+    changeset = Episode.changeset(Episode, episode_params)
 
     case Repo.update(changeset) do
-      {:ok, episodes} ->
+      {:ok, episode} ->
         conn
-        |> put_flash(:info, "Episodes updated successfully.")
-        |> redirect(to: episodes_path(conn, :show, episodes))
+        |> put_flash(:info, "Episode updated successfully.")
+        |> redirect(to: episodes_path(conn, :show, episode))
       {:error, changeset} ->
-        render(conn, "edit.html", episodes: episodes, changeset: changeset)
+        render(conn, "edit.html", episode: episode, changeset: changeset)
     end
   end
 
   def delete(conn, %{"id" => id}) do
-    episodes = Repo.get!(Episode, id)
+    episode = Repo.get!(Episode, id)
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
-    Repo.delete!(episodes)
+    Repo.delete!(episode)
 
     conn
-    |> put_flash(:info, "Episodes deleted successfully.")
+    |> put_flash(:info, "Episode deleted successfully.")
     |> redirect(to: episodes_path(conn, :index))
   end
 end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
-    <title>The Pop Culture Show</title>
+    <title>Backstage Casting</title>
     <link>https://shavittzuriel.com/</link>
     <description>Get a front row seat to backstage and behind the scenes videos, Periscope replays from the studio.</description>
     <language>en-us</language>
@@ -13,7 +13,7 @@
       <itunes:email>podcast@shavittzuriel.info</itunes:email>
     </itunes:owner>
     <itunes:explicit>Yes</itunes:explicit>
-    <itunes:image href="https://firebasestorage.googleapis.com/v0/b/shavit-c8be9.appspot.com/o/podcast%2Fartwork.png?alt=media&token=03647dac-f5d0-4e67-976b-00a6bc93057e"></itunes:image>
+    <itunes:image href="https://firebasestorage.googleapis.com/v0/b/shavit-c8be9.appspot.com/o/podcast%2Fartwork.png?alt=media&amp;token=03647dac-f5d0-4e67-976b-00a6bc93057e"></itunes:image>
     <itunes:category text="TV &amp; Film"></itunes:category>
 
     <%= for episode <- @episodes do %>

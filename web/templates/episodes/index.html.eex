@@ -6,8 +6,6 @@
       <th>Name</th>
       <th>Author</th>
       <th>Explicit</th>
-      <th>Description</th>
-      <th>Picture</th>
       <th>Duration</th>
       <th>Created</th>
 
@@ -17,16 +15,19 @@
   <tbody>
 <%= for episodes <- @name do %>
     <tr>
-      <td><%= episodes.name %></td>
-      <td><%= episodes.author %></td>
-      <td><%= episodes.explicit %></td>
-      <td><%= episodes.description %></td>
       <td>
         <%= link to: episodes_path(@conn, :show, episodes), class: "btn btn-default btn-xs" do %>
-          <img src="<%= episodes.picture %>" alt="<%= episodes.name %>"
-            width="240" />
+          <figure>
+            <img src="<%= episodes.picture %>" alt="<%= episodes.name %>"
+              width="240" />
+            <figcaption>
+              <%= episodes.name %>
+            </figcaption>
+          </figure>
         <% end %>
       </td>
+      <td><%= episodes.author %></td>
+      <td><%= episodes.explicit %></td>
       <td><%= episodes.duration %></td>
       <td><%= episodes.created %></td>
 

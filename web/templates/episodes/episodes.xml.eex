@@ -3,11 +3,11 @@
   <channel>
     <title>The Pop Culture Show</title>
     <link>https://shavittzuriel.com/</link>
-    <description>Get a front row seat to backstage and behind the scenes videos, Periscope replays from the studio (@ShavitTzuriel).</description>
+    <description>Get a front row seat to backstage and behind the scenes videos, Periscope replays from the studio.</description>
     <language>en-us</language>
     <itunes:author>Shavit Tzuriel</itunes:author>
     <itunes:subtitle>Art, entertainment and backstage videos, Periscope replays from the studio.</itunes:subtitle>
-    <itunes:summary>Get your front row seat to backstage, behind the scenes videos and Periscope replays live from the studio (@ShavitTzuriel).</itunes:summary>
+    <itunes:summary>Get your front row seat to backstage, behind the scenes videos and Periscope replays live from the studio.</itunes:summary>
     <itunes:owner>
       <itunes:name>Shavit Tzuriel</itunes:name>
       <itunes:email>podcast@shavittzuriel.info</itunes:email>
@@ -24,7 +24,7 @@
           <![CDATA[<img src="<%= episode.picture %>" alt="<%= episode.name %>" />]]>
         </description>
         <guid><%= formatted_uri(episode.video_url) %></guid>
-        <pubDate>Tue, 10 Nov 2015 08:00:00 +0000</pubDate>
+        <pubDate><%= formatted_date(episode.created) %></pubDate>
         <itunes:author><%= episode.author %></itunes:author>
         <itunes:explicit><%= if episode.explicit do "Yes" else "No" end %></itunes:explicit>
         <itunes:subtitle>Art, entertainment, castings, backstage videos, Periscope replays from the studio.</itunes:subtitle>

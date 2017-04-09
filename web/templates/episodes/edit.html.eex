@@ -1,4 +1,5 @@
 <h2>Edit episodes</h2>
+<img alt="<%= @episode.name %>" src="<%= @episode.picture %>" width="320" />
 
 <%= render "form.html", changeset: @changeset,
                         action: episodes_path(@conn, :update, @episode) %>

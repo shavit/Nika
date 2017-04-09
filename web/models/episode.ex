@@ -8,7 +8,7 @@ defmodule Nika.Episode do
     field :description, :string
     field :picture, :string
     field :duration, :integer
-    field :created, Ecto.Time, default: Ecto.DateTime.utc
+    field :created, Ecto.DateTime, default: Ecto.DateTime.utc
     field :video_url, :string
 
     timestamps()

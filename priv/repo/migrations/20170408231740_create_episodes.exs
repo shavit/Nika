@@ -10,7 +10,7 @@ defmodule Nika.Repo.Migrations.CreateEpisodes do
       add :picture, :string
       add :video_url, :string
       add :duration, :integer
-      add :created, :time
+      add :created, :datetime
 
       timestamps()
     end

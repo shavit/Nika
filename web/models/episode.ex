@@ -22,4 +22,8 @@ defmodule Nika.Episode do
     |> cast(params, [:name, :author, :explicit, :description, :picture, :video_url, :duration, :created, :video_url])
     |> validate_required([:name, :author, :explicit, :description, :picture, :video_url, :duration, :created, :video_url])
   end
+
+  def formatted_duration(struct, params \\ %{}) do
+    "1234"
+  end
 end

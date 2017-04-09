@@ -27,7 +27,7 @@
         <% end %>
       </td>
       <td><%= episodes.author %></td>
-      <td><%= episodes.explicit %></td>
+      <td><%= if episodes.explicit do "Yes" else "No" end %></td>
       <td><%= episodes.duration %></td>
       <td><%= episodes.created %></td>
 

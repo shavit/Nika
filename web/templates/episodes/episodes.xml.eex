@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>The Pop Culture Show</title>
+    <link>https://shavittzuriel.com/</link>
+    <description>Get a front row seat to backstage and behind the scenes videos, Periscope replays from the studio (@ShavitTzuriel).</description>
+    <language>en-us</language>
+    <itunes:author>Shavit Tzuriel</itunes:author>
+    <itunes:subtitle>Art, entertainment and backstage videos, Periscope replays from the studio.</itunes:subtitle>
+    <itunes:summary>Get your front row seat to backstage, behind the scenes videos and Periscope replays live from the studio (@ShavitTzuriel).</itunes:summary>
+    <itunes:owner>
+      <itunes:name>Shavit Tzuriel</itunes:name>
+      <itunes:email>podcast@shavittzuriel.info</itunes:email>
+    </itunes:owner>
+    <itunes:explicit>Yes</itunes:explicit>
+    <itunes:image href="https://shavittzuriel.com/podcasts/postcast_cover_art_181115.png"></itunes:image>
+    <itunes:category text="TV &amp; Film"></itunes:category>
+
+    <%= for episode <- @episodes do %>
+      <item>
+        <title><%= episode.name %></title>
+        <link>https://shavittzuriel.com</link>
+        <description>
+          <![CDATA[<img src="<%= episode.picture %>" alt="<%= episode.name %>" />]]>
+        </description>
+        <guid><%= formatted_uri(episode.video_url) %></guid>
+        <pubDate>Tue, 10 Nov 2015 08:00:00 +0000</pubDate>
+        <itunes:author><%= episode.author %></itunes:author>
+        <itunes:explicit><%= if episode.explicit do "Yes" else "No" end %></itunes:explicit>
+        <itunes:subtitle>Art, entertainment, castings, backstage videos, Periscope replays from the studio.</itunes:subtitle>
+        <itunes:summary><%= episode.description %></itunes:summary>
+        <itunes:duration><%= formatted_duration(episode.duration) %></itunes:duration>
+        <enclosure url="<%= formatted_uri(episode.video_url) %>" type="video/mp4" length="<%= formatted_duration(episode.duration) %>"></enclosure>
+        <itunes:keywords>Backstage,Photoshoot,Fashion,Behind The Scenes,Studio,ShavitTzuriel,Lighting,Periscope,Vlog,Nu,Art</itunes:keywords>
+      </item>
+    <% end %>
+
+  </channel>
+</rss>

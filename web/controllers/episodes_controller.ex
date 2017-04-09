@@ -62,4 +62,13 @@ defmodule Nika.EpisodesController do
     |> put_flash(:info, "Episode deleted successfully.")
     |> redirect(to: episodes_path(conn, :index))
   end
+
+  def rss(conn, _params) do
+    episodes = Repo.all(Episode)
+
+    conn
+    |> put_layout(:none)
+    |> put_resp_content_type("text/xml")
+    |> render "episodes.xml", episodes: episodes
+  end
 end

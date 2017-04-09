@@ -18,6 +18,7 @@ defmodule Nika.Router do
 
     get "/", PageController, :index
     resources "/episodes", EpisodesController
+    get"/episodes.xml", EpisodesController, :rss
   end
 
   # Other scopes may use custom stacks.

@@ -1,5 +1,9 @@
 <h2><%= @episode.name %></h2>
 
+<video width="320">
+  <source type="video/mp4" src="<%= @episode.video_url %>" />
+</video>
+
 <ul>
 
   <li>

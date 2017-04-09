@@ -26,6 +26,11 @@
         <description>
           <![CDATA[<img src="<%= formatted_uri episode.picture %>" alt="<%= episode.name %>" />]]>
         </description>
+        <image>
+          <url><%= formatted_uri episode.picture %></url>
+          <title><%= episode.name %></title>
+          <link>https://shavittzuriel.com</link>
+        </image>
         <guid><%= formatted_uri(episode.video_url) %></guid>
         <pubDate><%= formatted_date(episode.created) %></pubDate>
         <itunes:author><%= episode.author %></itunes:author>

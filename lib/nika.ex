@@ -14,6 +14,7 @@ defmodule Nika do
       supervisor(Nika.Endpoint, []),
       # Start your own worker by calling: Nika.Worker.start_link(arg1, arg2, arg3)
       # worker(Nika.Worker, [arg1, arg2, arg3]),
+      worker(Nika.Tasks.RSSGenerator, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

@@ -6,7 +6,7 @@ defmodule Nika.EpisodesView do
   end
 
   def formatted_uri(uri) do
-    uri <> "#/"
+    uri
     |> String.replace("&", "&amp;")
     |> URI.encode
   end

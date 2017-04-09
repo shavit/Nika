@@ -16,7 +16,7 @@
       <itunes:email>podcast@shavittzuriel.info</itunes:email>
     </itunes:owner>
     <itunes:explicit>Yes</itunes:explicit>
-    <itunes:image href="https://shavittzuriel.com/rss/artwork.png"></itunes:image>
+    <itunes:image href="http://podcast.shavittzuriel.com/artwork.png"></itunes:image>
     <itunes:category text="TV &amp; Film"></itunes:category>
 
     <%= for episode <- @episodes do %>

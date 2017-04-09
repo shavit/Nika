@@ -6,7 +6,7 @@ defmodule Nika.EpisodesView do
   end
 
   def formatted_uri(uri) do
-    uri
+    uri <> "#/"
     |> String.replace("&", "&amp;")
     |> URI.encode
   end
@@ -15,21 +15,29 @@ defmodule Nika.EpisodesView do
     # date = d |> Ecto.DateTime.to_iso8601
     day_of_week = Calendar.ISO.day_of_week(d.year, d.month, d.day)
     "#{day_in_words(day_of_week)}, "
-      <>"#{d.day} "
+      <>"#{zero_leading(d.day)} "
       <>"#{month_in_words(d.month)} "
-      <>"#{d.year} "
-      <>" 00:00:00 -04:00"
+      <>"#{d.year}"
+      <>" 08:00:00 -0400"
+  end
+
+  defp zero_leading(n) do
+    if n < 10 do
+      "0#{n}"
+    else
+      "#{n}"
+    end
   end
 
   defp day_in_words(n) do
     case n do
-      1 -> "Sun"
-      2 -> "Mon"
-      3 -> "Tue"
-      4 -> "Wed"
-      5 -> "Thu"
-      6 -> "Fri"
-      7 -> "Sat"
+      0 -> "Sun"
+      1 -> "Mon"
+      2 -> "Tue"
+      3 -> "Wed"
+      4 -> "Thu"
+      5 -> "Fri"
+      6 -> "Sat"
     _ ->
       "Sun"
     end

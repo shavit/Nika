@@ -13,7 +13,7 @@
       <itunes:email>podcast@shavittzuriel.info</itunes:email>
     </itunes:owner>
     <itunes:explicit>Yes</itunes:explicit>
-    <itunes:image href="https://firebasestorage.googleapis.com/v0/b/shavit-c8be9.appspot.com/o/podcast%2Fartwork.png?alt=media&amp;token=03647dac-f5d0-4e67-976b-00a6bc93057e"></itunes:image>
+    <itunes:image href="https://firebasestorage.googleapis.com/v0/b/shavit-c8be9.appspot.com/o/podcast%2Fartwork.png?alt=media&amp;token=d841de9a-0e18-4a83-b846-61f13278444c#/"></itunes:image>
     <itunes:category text="TV &amp; Film"></itunes:category>
 
     <%= for episode <- @episodes do %>
@@ -21,7 +21,7 @@
         <title><%= episode.name %></title>
         <link>https://shavittzuriel.com</link>
         <description>
-          <![CDATA[<img src="<%= episode.picture %>" alt="<%= episode.name %>" />]]>
+          <![CDATA[<img src="<%= formatted_uri episode.picture %>" alt="<%= episode.name %>" />]]>
         </description>
         <guid><%= formatted_uri(episode.video_url) %></guid>
         <pubDate><%= formatted_date(episode.created) %></pubDate>
